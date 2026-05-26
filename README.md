@@ -1,4 +1,4 @@
-# Global News v2
+# Keefkom v1 (Global News v2)
 
 ## Stack:
 - FastAPI

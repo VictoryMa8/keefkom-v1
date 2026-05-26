@@ -10,6 +10,7 @@ GNEWS_KEY = os.getenv("GNEWS_KEY")
 
 async def fetch_news(max):
     url = f"https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max={max}&apikey={GNEWS_KEY}"
+    # HTTPX is the best HTTP client for Python, AsyncClient is the best way to make asynchronous requests
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
         return response.json()
@@ -22,6 +23,7 @@ async def root():
 
 @app.get("/news")
 async def get_news():
+    # Use fetch_news to get 10 articles
     data = await fetch_news(10)
     # Getting values of "articles" key from response
     return {"articles": data["articles"]}

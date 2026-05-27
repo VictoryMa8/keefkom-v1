@@ -1,6 +1,6 @@
 # Keefkom v1 (Global News v2)
 
-## Stack:
+## Stack
 - FastAPI
 - Tailwind CSS + DaisyUI
 - Vue

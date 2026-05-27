@@ -20,7 +20,7 @@ async def fetch_news(max, country_code):
     url = f"https://gnews.io/api/v4/top-headlines?category=general&lang=en&country={country_code}&max={max}&apikey={GNEWS_KEY}"
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
-        return await response.json()
+        return response.json()
 
 @app.get("/")
 async def root():
